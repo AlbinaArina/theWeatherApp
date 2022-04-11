@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
                     String city = user_field.getText().toString();
                     String key = "7bd9ebcd3edf63a3334abb934e011aad";
 //                    String urlToGetLonLat = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + key;
-//                    String lat = getDataByKey(urlToGetLonLat, "lat");
-//                    String lon = getDataByKey(urlToGetLonLat, "lon");
                     Map<String, ArrayList<String>> map = new HashMap<>();
                     fillMap(map);
 
@@ -82,56 +80,6 @@ public class MainActivity extends AppCompatActivity {
         map.put("NYC", new ArrayList<>(Arrays. asList( "40.7127281" , "-74.0060152")));
         map.put("Warsaw", new ArrayList<>(Arrays. asList( "52.2337172" , "21.071432235636493")));
     }
-
-//    private String getDataByKey(String urlString, String key) {
-//        String res = null;
-//        HttpURLConnection connection = null;
-//        BufferedReader reader = null;
-//        try {
-//            URL url = new URL(urlString);
-//            connection = (HttpURLConnection) url.openConnection();
-//            connection.connect();
-//
-//            InputStream stream = connection.getInputStream();
-//            reader = new BufferedReader(new InputStreamReader(stream));
-//
-//            StringBuilder builder = new StringBuilder();
-//            String line = "";
-//
-//            while ((line = reader.readLine()) != null) {
-//                builder.append(line).append("\n");
-//            }
-//
-//            StringBuilder sbKey = new StringBuilder("\"" + key +"\":");
-//            String[] split = builder.toString().split(",");
-//            for (String s : split) {
-//                if (res == null) {
-//                    if (line.length() > sbKey.length()) {
-//                        if (line.substring(0, sbKey.length()).equals(sbKey.toString())) {
-//                            res = line.split(":")[1];
-//                        }
-//                    }
-//                }
-//            }
-//            result_info.setText(res);
-//            return res;
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (connection != null) {
-//                connection.disconnect();
-//            }
-//            if (reader != null) {
-//                try {
-//                    reader.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//
-//        return res;
-//    }
 
     @SuppressLint("StaticFieldLeak")
     private class GetUrlData extends AsyncTask<String, String, String> {
